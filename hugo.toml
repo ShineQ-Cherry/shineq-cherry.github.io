@@ -1,0 +1,5 @@
+baseURL = "https://ShineQ-Cherry.github.io/"
+languageCode = "en-us"
+title = "My Hugo Blog"
+theme = "stack"
+publishDir = "public"
