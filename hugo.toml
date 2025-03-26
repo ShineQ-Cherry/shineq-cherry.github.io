@@ -1,4 +1,4 @@
-baseURL = "https://ShineQ-Cherry.github.io/"
+baseURL = "https://shineq-cherry.github.io/"
 languageCode = "en-us"
 title = "My Hugo Blog"
 theme = "stack"
