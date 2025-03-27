@@ -1,28 +1,30 @@
-name: Deploy Hugo Site
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # 监听 main 分支的推送自动部署
+      - main  # 监听 main 分支的提交
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
+          extended: true  # 如果你使用了 SCSS/SASS 需要这个
 
-      - name: Build
-        run: hugo --minify
+      - name: Build Hugo site
+        run: hugo --minify  # 生成静态文件
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public  # Hugo 生成的静态文件目录
-          publish_branch: gh-pages  # ✅ 指定 `gh-pages` 分支
+          publish_branch: gh-pages  # 部署到 gh-pages 分支
