@@ -46,7 +46,3 @@ enableRobotsTXT = true  # 允许搜索引擎索引
     lineNos = true
     style = "dracula"
 
-# ✅ 主题模块（确保 `hugo mod tidy` 能正确下载依赖）
-[module]
-  [[module.imports]]
-    path = "github.com/CaiJimmy/hugo-theme-stack/v3"
