@@ -41,6 +41,6 @@
 
 <!-- Post List Section -->
 <div id="posts" class="post-section">
-  {{ partial "widgets/post-list.html" . }}
+  {{ partial "widgets/posts.html" (dict "Site" .Site "Page" . "Params" .Params) }}
 </div>
 {{ end }}
